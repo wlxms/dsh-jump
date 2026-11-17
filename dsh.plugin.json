@@ -1,0 +1,12 @@
+{
+  "id": "local/dsh-jump",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "description": "DSH IDE 跳转子插件适配层：按当前 IDE 的已打开工作区选择最接近的目标，打开 file:line:column。当前为骨架，核心实现待从 dsh-ehm 迁移。",
+  "engines": {
+    "dsh": ">=0.1.7-rc.2"
+  },
+  "contributes": {
+    "tools": []
+  }
+}

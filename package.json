@@ -1,0 +1,41 @@
+{
+  "name": "dsh-jump",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DSH IDE 跳转子插件适配层（预留）：把 file:line:column 在 VSCode/Cursor/Zed/Rider 等 IDE 中最接近的已打开工作区里打开；当前为目录与接口骨架，核心实现从 dsh-ehm 迁移中。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.1.7-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "lib/**/*.js",
+    "test/run.mjs",
+    "cordis.patch.yml",
+    "dsh.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/run.mjs"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "ide",
+    "jump"
+  ]
+}

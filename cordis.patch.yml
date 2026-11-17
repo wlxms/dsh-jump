@@ -1,0 +1,13 @@
+# dsh-jump bundle patch：可选安装的 IDE 跳转适配层。
+#
+# 这个插件不渲染任何东西，只提供 Host 侧 /ide-jump/* 接口：
+#   GET  /ide-jump/health   插件/能力探测
+#   GET  /ide-jump/ides     本机 IDE + 当前选择（迁移后）
+#   POST /ide-jump/settings 切换 jumpIde（迁移后）
+#   POST /ide-jump/open     { file, line?, column? } -> 在 IDE 中打开（迁移后）
+#
+# 目前 dsh-ehm 仍保留自己的 IDE 跳转实现；本插件先作为独立目录和接口契约存在，
+# 等核心从 dsh-ehm 迁出后，dsh-ehm 再改成调用 /ide-jump/open。
+- insert:
+    - id: ide-jump
+      name: 'dsh-jump'
